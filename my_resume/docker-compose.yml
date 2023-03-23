@@ -1,7 +1,6 @@
 version: '3.1'
 
 services:
-
   db:
     image: mysql
     container_name: myresume_db
@@ -10,7 +9,7 @@ services:
     ports:
       - 3306:3306
     environment:
-      MYSQL_ROOT_PASSWORD: example
+      MYSQL_ROOT_PASSWORD: agustinbavaresume
       MYSQL_DATABASE: myresume
 
   adminer:
