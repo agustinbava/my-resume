@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -110,7 +111,7 @@
               As an individual who is constantly looking to grow and evolve, I have a strong interest in working on long-term projects that allow me to dive deep into complex problems and develop innovative solutions. I am particularly drawn to the latest developments in DevOps technologies, such as cloud providers and tools like Terraform, Ansible, and Kubernetes. I am eager to stay up-to-date with the latest trends and developments in this space.
             </p>
             <p>
-              In addition to my professional pursuits, I am also passionate about travelling, football, and finances. I love exploring new places and immersing myself in different cultures, whether it's backpacking or simply taking a road trip to a nearby city. 
+              In addition to my professional pursuits, I am also passionate about travelling, football, and finances. I love exploring new places and immersing myself in different cultures. 
             </p>
             <p>
               As for football, I enjoy both playing and watching but even more playing the sport, and I believe that the teamwork, strategy, and perseverance required to succeed on the field are valuable lessons that can be applied to all areas of life. 
@@ -424,7 +425,8 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="" method="post" role="form" class="">
+              {% csrf_token %}
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -440,11 +442,9 @@
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
               <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <div class="sent-message"> {{ message.as_p }}</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><input type="submit" id="button" value="Send email"></div>
             </form>
 
           </div>
