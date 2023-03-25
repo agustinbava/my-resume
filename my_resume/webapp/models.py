@@ -23,7 +23,7 @@ class Contact(models.Model):
     name = models.CharField(max_length=200, blank=False, null=False)
     email = models.EmailField(max_length=100, null=False, blank=False)
     subject = models.CharField(max_length=500, blank=True, null=False)
-    message = models.TimeField(max_length=15000, blank=False, null=False)
+    message = models.TextField(max_length=15000, blank=False, null=False)
     
     def __str__(self):
-        return self.email + ' ' + self.subject 
+        return self.email + ' ' + self.subject
