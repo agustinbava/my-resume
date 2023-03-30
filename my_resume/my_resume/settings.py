@@ -11,16 +11,23 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+import dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+dotenv_file = os.path.join(BASE_DIR, ".env")
+
+if os.path.isfile(dotenv_file):
+    dotenv.load_dotenv(dotenv_file)
+
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-_fsan4l=ox5$6usvf23@30x&pm)5!c-281%q5+^yl%8=s&1)7h'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -78,9 +85,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'myresume',
-        'HOST': 'localhost',
-        'USER': 'root',
-        'PASSWORD': 'agustinbavaresume',
+        'HOST': os.environ['db_host'],
+        'USER': os.environ['db_user'],
+        'PASSWORD': os.environ['db_pass'],
         'PORT': 3306,
     }
 }
