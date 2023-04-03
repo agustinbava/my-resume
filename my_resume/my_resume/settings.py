@@ -133,7 +133,8 @@ STATICFILES_DIRS = [
     BASE_DIR / 'assets',
 ]
 
-STATIC_ROOT = '/var/www/assets'
+# STATIC_ROOT = '/var/www/assets'
+STATIC_ROOT = '/assets'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
