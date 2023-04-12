@@ -21,3 +21,5 @@ sudo firewall-cmd --zone=public --add-port=8000/tcp --permanent
 
 # To troubleshoot further: https://repost.aws/knowledge-center/ec2-instance-hosting-unresponsive-website
 
+# To update static files in /var/www/assets
+python3 manage.py collectstatic
