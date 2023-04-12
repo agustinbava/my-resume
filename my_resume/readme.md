@@ -9,7 +9,7 @@ docker-compose version
 docker-compose up -d
 
 # To run web service using gunicorn
-gunicorn --bind 0.0.0.0:8000 my_resume.wsgi
+gunicorn --bind 0.0.0.0:55555 my_resume.wsgi
 
 # Or create service
 sudo nano /etc/systemd/system/gunicorn.service
